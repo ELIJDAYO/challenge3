@@ -6,10 +6,12 @@
    git push -u origin main or master
 
    git add .
--  to see pushed files
+-  to see committed files
    git status
 -  to unstage
    git rm --cached -r .
+-  to push
+$   git push -u origin main
 
    git commit -m "Initial commit"
 
@@ -26,3 +28,6 @@ or
 $ git switch <existing_branch>
 -c means create
 $ git switch -c <non_existing_branch>
+
+- to run the app
+$ node app.js
