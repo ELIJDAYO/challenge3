@@ -1,0 +1,28 @@
+1. npm install, install packages specified in the json file
+
+2. git remote add origin git@github.com:ELIJDAYO/challenge3.git
+   git branch -M main
+-  -u means link local and remote repo
+   git push -u origin main or master
+
+   git add .
+-  to see pushed files
+   git status
+-  to unstage
+   git rm --cached -r .
+
+   git commit -m "Initial commit"
+
+-  for branching
+-  to check version control
+   git log
+-  to add a branching
+   git branch <branch name>
+-  to see a list of branching
+   git branch
+-  to switch branching
+   git checkout <branch name>
+or
+$ git switch <existing_branch>
+-c means create
+$ git switch -c <non_existing_branch>
