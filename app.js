@@ -14,10 +14,14 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
+// let is better than var
+let posts = [];
 
 app.get("/", function(req, res){
-  res.render("home", {startingContent: homeStartingContent});
+  res.render("home", {
+    startingContent: homeStartingContent,
+    posts: posts
+  });
 })
 app.get("/about", function(req, res){
   res.render("about", {aboutContent: aboutContent});
@@ -30,7 +34,14 @@ app.get("/compose", function(req, res){
   res.render("compose");
 })
 app.post("/compose", function(req, res){
-  console.log(req.body.postTitle);
+  // post obj
+  const post = {
+    title: req.body.postTitle,
+    content: req.body.postBody,
+  };
+  posts.push(post);
+
+  res.redirect("/");
 })
 
 app.listen(3000, function() {
